@@ -87,7 +87,7 @@ function turmas(d){
 function renderCurso(d){
   if(!d)return naoEncontrado('Voltar aos cursos','index.html#cursos');
   definirTitulo(d.nome,d.resumo);
-  const fato=(r,v)=>v?`<div class="fact"><b>${esc(r)}</b><span>${esc(v)}</span></div>`:'';
+  const fato=(r,v,full)=>v?`<div class="fact${full?' full':''}"><b>${esc(r)}</b><span>${esc(v)}</span></div>`:'';
   const modulos=lista(d.conteudo).length?`<ol class="modules">${lista(d.conteudo).map(m=>`<li><div><b>${esc(m.nome)}</b><span>${esc(m.descricao)}</span></div><em>${esc(m.horas)}</em></li>`).join('')}</ol>`:'';
   const inv=d.investimento;
   const corpo=[
@@ -102,16 +102,16 @@ function renderCurso(d){
     secao('Próximas turmas',turmas(d))
   ].join('');
   document.getElementById('app').innerHTML=`
-  <section class="hero"><div class="container">
+  <section class="hero"><div class="container hero-grid"><div class="hero-text">
    <p class="crumbs"><a href="index.html">Catálogo</a> › <a href="index.html#cursos">Cursos oferecidos</a> › ${esc(d.nome)}</p>
    <div class="kicker">Portfólio de formação${d.area?' · '+esc(d.area):''}</div>
    <h1>${esc(d.nome)}</h1>${d.resumo?`<p class="lead">${esc(d.resumo)}</p>`:''}
    <div class="tags">${d.categoria?`<span class="tag">${esc(d.categoria)}</span>`:''}${d.situacao?`<span class="tag ${d.situacao==='Em andamento'?'live':''}">${esc(d.situacao)}</span>`:''}${d.formato?`<span class="tag">${esc(d.formato)}</span>`:''}</div>
-  </div></section>
-  <main><div class="container"><div class="layout"><div class="content">${corpo}</div>
-   <aside class="summary">${inv?`<div class="price"><small>Investimento</small><strong>${esc(inv.valor)}</strong>${inv.condicao?`<div style="font-size:.88rem;color:#cfe0f0">${esc(inv.condicao)}</div>`:''}</div>`:''}
-    <div class="aside-body">${fato('Carga horária',d.cargaHoraria)}${fato('Formato',d.formatoDetalhe||d.formato)}${fato('Dias e horários',d.horarios)}${fato('Área tecnológica',d.area)}${fato('Infraestrutura mínima',d.infraestrutura)}${fato('Pré-requisitos',d.preRequisitos)}${fato('Idade mínima',d.idadeMinima)}${fato('Situação da turma',d.situacao)}
+   </div>
+   <aside class="summary">${inv?`<div class="price"><small>Investimento</small><div class="pv"><strong>${esc(inv.valor)}</strong>${inv.condicao?`<span>${esc(inv.condicao)}</span>`:''}</div></div>`:''}
+    <div class="aside-body">${fato('Carga horária',d.cargaHoraria)}${fato('Formato',d.formatoDetalhe||d.formato)}${fato('Idade mínima',d.idadeMinima)}${fato('Área tecnológica',d.area)}${fato('Infraestrutura mínima',d.infraestrutura,1)}${fato('Pré-requisitos',d.preRequisitos,1)}
     <a class="btn" href="#contato">${esc(d.contato?.botao||'Quero me inscrever')}</a></div></aside>
-  </div></div>${formularioContato(d.contato,'Inscrição - '+d.nome,d.nome)}</main>`;
+  </div></section>
+  <main><div class="container"><div class="layout single"><div class="content">${corpo}</div></div></div>${formularioContato(d.contato,'Inscrição - '+d.nome,d.nome)}</main>`;
   ativarFormularios();
 }

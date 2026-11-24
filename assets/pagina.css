@@ -68,3 +68,16 @@ a.card .mais{display:block;margin-top:10px;font-size:.82rem;font-weight:800;colo
 .turmas .acao a{font-size:.86rem;font-weight:800;color:var(--orange);text-decoration:none}.turmas .acao a:hover{text-decoration:underline}
 .nota{font-size:.84rem!important;color:var(--muted)!important;margin:12px 0 0!important}
 @media(max-width:560px){.turmas li{grid-template-columns:60px 1fr}.turmas .acao{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center}}
+/* Curso: card de resumo dentro do hero, compacto e visível sem rolar */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start;position:relative}
+.hero-text{padding-bottom:6px}
+.hero .summary{position:static;color:var(--ink);margin-top:2px;box-shadow:0 18px 44px #06203f55;border:0}
+aside.summary .price{padding:13px 18px;display:block}
+aside.summary .price strong{font-size:1.45rem}
+.price .pv{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}.price .pv span{font-size:.82rem;color:#cfe0f0}
+.aside-body{padding:4px 18px 16px;display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
+.aside-body .fact{padding:9px 0}.aside-body .fact.full{grid-column:1/-1}
+.aside-body .fact b{font-size:.64rem}.aside-body .fact span{font-size:.86rem;line-height:1.35}
+.aside-body .btn{grid-column:1/-1;margin-top:12px;padding:11px 18px}
+.hero:has(.hero-grid){padding-bottom:44px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:26px}}
