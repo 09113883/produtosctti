@@ -5,7 +5,8 @@
    Campos sem valor (ou removidos) simplesmente não aparecem na página.
 
    Campos: nome, categoria, area, situacao ('Em andamento' | 'Futuro' | 'Encerrado'), formato, formatoDetalhe, resumo,
-           cargaHoraria, periodo, horarios, investimento {valor, condicao}, sobre, desafio, conquistas [], metodologia,
+           cargaHoraria, horarios, infraestrutura, preRequisitos, idadeMinima,
+           turmas [{nome, inicio 'dd/mm/aaaa', termino, horarios, formato, situacao ('Inscrições abertas'|'Vagas limitadas'|'Em breve'|'Em andamento')}], investimento {valor, condicao}, sobre, desafio, conquistas [], metodologia,
            conteudo [{nome, descricao, horas}], publico, oportunidades [{titulo, texto}], certificado,
            contato {titulo, texto, assunto, placeholder, botao} */
 const CURSOS={
@@ -17,7 +18,6 @@ const CURSOS={
   "formato": "Híbrido",
   "resumo": "Explore formas de organizar, interpretar e transformar grandes volumes de dados em informações que apoiam decisões e estratégias de negócio.",
   "cargaHoraria": "120 horas",
-  "periodo": "01/03/2027 a 02/07/2027",
   "horarios": "Segundas e quartas, das 19h às 22h30",
   "investimento": {
    "valor": "R$ 2.190,00",
@@ -84,7 +84,36 @@ const CURSOS={
    "assunto": "Inscrição - Análise de Dados, Big Data e Business Intelligence",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Reservar minha vaga"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "01/03/2027",
+    "termino": "02/07/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h30",
+    "formato": "Híbrido",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "03/05/2027",
+    "termino": "27/08/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h30",
+    "formato": "Híbrido",
+    "situacao": "Vagas limitadas"
+   },
+   {
+    "nome": "Turma 2027.3",
+    "inicio": "02/08/2027",
+    "termino": "26/11/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h30",
+    "formato": "Híbrido",
+    "situacao": "Em breve"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "automacao-inteligente-de-processos-com-ia": {
   "nome": "Automação Inteligente de Processos com IA",
@@ -94,7 +123,6 @@ const CURSOS={
   "formato": "Híbrido",
   "resumo": "Conheça aplicações de inteligência artificial para automatizar tarefas, integrar etapas de trabalho e tornar processos mais eficientes.",
   "cargaHoraria": "100 horas",
-  "periodo": "05/10/2026 a 19/03/2027",
   "horarios": "Terças e quintas, das 19h às 22h",
   "investimento": {
    "valor": "R$ 1.980,00",
@@ -161,7 +189,36 @@ const CURSOS={
    "assunto": "Inscrição - Automação Inteligente de Processos com IA",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Quero me inscrever"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma atual",
+    "inicio": "05/10/2026",
+    "termino": "19/03/2027",
+    "horarios": "Terças e quintas, das 19h às 22h",
+    "formato": "Híbrido",
+    "situacao": "Em andamento"
+   },
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "02/02/2027",
+    "termino": "29/05/2027",
+    "horarios": "Terças e quintas, das 19h às 22h",
+    "formato": "Híbrido",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "04/05/2027",
+    "termino": "28/08/2027",
+    "horarios": "Terças e quintas, das 19h às 22h",
+    "formato": "Híbrido",
+    "situacao": "Em breve"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "banco-de-dados-sql": {
   "nome": "Banco de Dados SQL",
@@ -171,7 +228,6 @@ const CURSOS={
   "formato": "Presencial",
   "resumo": "Desenvolva conhecimentos para estruturar, consultar e gerenciar bancos de dados relacionais utilizando a linguagem SQL.",
   "cargaHoraria": "80 horas",
-  "periodo": "02/03/2026 a 26/06/2026",
   "horarios": "Segundas e quartas, das 19h às 22h",
   "investimento": {
    "valor": "R$ 1.290,00",
@@ -233,7 +289,36 @@ const CURSOS={
    "assunto": "Nova turma - Banco de Dados SQL",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Avisar-me sobre novas turmas"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "01/02/2027",
+    "termino": "07/05/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "03/05/2027",
+    "termino": "06/08/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   },
+   {
+    "nome": "Turma 2027.3",
+    "inicio": "02/08/2027",
+    "termino": "05/11/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "desenvolvimento-de-chatbots-e-assistentes-com-ia": {
   "nome": "Desenvolvimento de Chatbots e Assistentes com IA",
@@ -243,7 +328,6 @@ const CURSOS={
   "formato": "Online ao vivo",
   "resumo": "Aprenda conceitos envolvidos na criação de chatbots e assistentes inteligentes para interação, atendimento e apoio a diferentes atividades.",
   "cargaHoraria": "90 horas",
-  "periodo": "08/03/2027 a 25/06/2027",
   "horarios": "Terças e quintas, das 19h às 21h30",
   "investimento": {
    "valor": "R$ 1.790,00",
@@ -310,7 +394,28 @@ const CURSOS={
    "assunto": "Inscrição - Desenvolvimento de Chatbots e Assistentes com IA",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Reservar minha vaga"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "08/03/2027",
+    "termino": "25/06/2027",
+    "horarios": "Terças e quintas, das 19h às 21h30",
+    "formato": "Online ao vivo",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "03/08/2027",
+    "termino": "04/12/2027",
+    "horarios": "Terças e quintas, das 19h às 21h30",
+    "formato": "Online ao vivo",
+    "situacao": "Vagas limitadas"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "empreendedorismo-inovacao-e-novos-negocios": {
   "nome": "Empreendedorismo, Inovação e Novos Negócios",
@@ -320,7 +425,6 @@ const CURSOS={
   "formato": "Presencial",
   "resumo": "Conheça fundamentos para identificar oportunidades, desenvolver ideias e estruturar iniciativas inovadoras e novos modelos de negócio.",
   "cargaHoraria": "60 horas",
-  "periodo": "19/10/2026 a 18/12/2026",
   "horarios": "Segundas e quartas, das 18h30 às 21h30",
   "investimento": {
    "valor": "R$ 890,00",
@@ -382,7 +486,36 @@ const CURSOS={
    "assunto": "Inscrição - Empreendedorismo, Inovação e Novos Negócios",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Quero me inscrever"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma atual",
+    "inicio": "19/10/2026",
+    "termino": "18/12/2026",
+    "horarios": "Segundas e quartas, das 18h30 às 21h30",
+    "formato": "Presencial",
+    "situacao": "Em andamento"
+   },
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "01/02/2027",
+    "termino": "09/04/2027",
+    "horarios": "Segundas e quartas, das 18h30 às 21h30",
+    "formato": "Presencial",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "03/05/2027",
+    "termino": "09/07/2027",
+    "horarios": "Segundas e quartas, das 18h30 às 21h30",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "full-stack-web": {
   "nome": "Full Stack Web",
@@ -393,7 +526,6 @@ const CURSOS={
   "formatoDetalhe": "Presencial, em laboratório",
   "resumo": "Do front-end ao back-end: aprenda a construir aplicações web completas e prepare-se para uma das áreas que mais contratam em tecnologia.",
   "cargaHoraria": "160 horas",
-  "periodo": "03/08/2026 a 18/12/2026",
   "horarios": "Segundas, quartas e sextas, das 19h às 22h",
   "investimento": {
    "valor": "R$ 2.480,00",
@@ -471,7 +603,36 @@ const CURSOS={
    "assunto": "Inscrição - Full Stack Web",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Quero me inscrever"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma atual",
+    "inicio": "03/08/2026",
+    "termino": "18/12/2026",
+    "horarios": "Segundas, quartas e sextas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Em andamento"
+   },
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "01/02/2027",
+    "termino": "18/06/2027",
+    "horarios": "Segundas, quartas e sextas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "03/05/2027",
+    "termino": "17/09/2027",
+    "horarios": "Segundas, quartas e sextas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "ia-aplicada-a-industria": {
   "nome": "IA Aplicada à Indústria",
@@ -481,7 +642,6 @@ const CURSOS={
   "formato": "Presencial",
   "resumo": "Conheça possibilidades de aplicação da inteligência artificial em ambientes industriais, apoiando análise, produtividade e melhoria de processos.",
   "cargaHoraria": "80 horas",
-  "periodo": "15/03/2027 a 25/06/2027",
   "horarios": "Segundas e quartas, das 19h às 22h",
   "investimento": {
    "valor": "R$ 1.890,00",
@@ -543,7 +703,28 @@ const CURSOS={
    "assunto": "Inscrição - IA Aplicada à Indústria",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Reservar minha vaga"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "15/03/2027",
+    "termino": "25/06/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "02/08/2027",
+    "termino": "05/11/2027",
+    "horarios": "Segundas e quartas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Vagas limitadas"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "qualificacao-em-animacao-3d": {
   "nome": "Qualificação em Animação 3D",
@@ -553,7 +734,6 @@ const CURSOS={
   "formato": "Presencial",
   "resumo": "Explore técnicas e ferramentas de criação de objetos, cenas e movimentos tridimensionais para diferentes aplicações digitais.",
   "cargaHoraria": "160 horas",
-  "periodo": "09/02/2026 a 31/07/2026",
   "horarios": "Segundas, quartas e sextas, das 19h às 22h",
   "investimento": {
    "valor": "R$ 2.680,00",
@@ -620,7 +800,36 @@ const CURSOS={
    "assunto": "Nova turma - Qualificação em Animação 3D",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Avisar-me sobre novas turmas"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "01/02/2027",
+    "termino": "04/06/2027",
+    "horarios": "Segundas, quartas e sextas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "03/05/2027",
+    "termino": "03/09/2027",
+    "horarios": "Segundas, quartas e sextas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   },
+   {
+    "nome": "Turma 2027.3",
+    "inicio": "02/08/2027",
+    "termino": "03/12/2027",
+    "horarios": "Segundas, quartas e sextas, das 19h às 22h",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "qualificacao-profissional-em-python-para-ciberseguranca-e-redes": {
   "nome": "Qualificação profissional em Python para Cibersegurança e Redes",
@@ -630,7 +839,6 @@ const CURSOS={
   "formato": "Híbrido",
   "resumo": "Utilize a linguagem Python como apoio à automação de tarefas, análise de informações e atividades relacionadas a redes e cibersegurança.",
   "cargaHoraria": "120 horas",
-  "periodo": "08/03/2027 a 30/07/2027",
   "horarios": "Terças e quintas, das 19h às 22h30",
   "investimento": {
    "valor": "R$ 2.240,00",
@@ -697,7 +905,28 @@ const CURSOS={
    "assunto": "Inscrição - Qualificação profissional em Python para Cibersegurança e Redes",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Reservar minha vaga"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "08/03/2027",
+    "termino": "30/07/2027",
+    "horarios": "Terças e quintas, das 19h às 22h30",
+    "formato": "Híbrido",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "03/08/2027",
+    "termino": "27/11/2027",
+    "horarios": "Terças e quintas, das 19h às 22h30",
+    "formato": "Híbrido",
+    "situacao": "Vagas limitadas"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  },
  "qualificacao-profissional-em-software-livre-para-redes-e-ciberseguranca": {
   "nome": "Qualificação profissional em software Livre para redes e Cibersegurança",
@@ -707,7 +936,6 @@ const CURSOS={
   "formato": "Presencial",
   "resumo": "Conheça ferramentas de software livre aplicadas à configuração, administração, monitoramento e proteção de redes.",
   "cargaHoraria": "120 horas",
-  "periodo": "03/02/2026 a 30/06/2026",
   "horarios": "Terças e quintas, das 19h às 22h30",
   "investimento": {
    "valor": "R$ 2.190,00",
@@ -774,6 +1002,35 @@ const CURSOS={
    "assunto": "Nova turma - Qualificação profissional em software Livre para redes e Cibersegurança",
    "placeholder": "Dúvidas sobre a turma, o investimento ou a matrícula",
    "botao": "Avisar-me sobre novas turmas"
-  }
+  },
+  "turmas": [
+   {
+    "nome": "Turma 2027.1",
+    "inicio": "02/02/2027",
+    "termino": "29/05/2027",
+    "horarios": "Terças e quintas, das 19h às 22h30",
+    "formato": "Presencial",
+    "situacao": "Inscrições abertas"
+   },
+   {
+    "nome": "Turma 2027.2",
+    "inicio": "04/05/2027",
+    "termino": "28/08/2027",
+    "horarios": "Terças e quintas, das 19h às 22h30",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   },
+   {
+    "nome": "Turma 2027.3",
+    "inicio": "03/08/2027",
+    "termino": "27/11/2027",
+    "horarios": "Terças e quintas, das 19h às 22h30",
+    "formato": "Presencial",
+    "situacao": "Em breve"
+   }
+  ],
+  "infraestrutura": "Computador com acesso à internet",
+  "preRequisitos": "Curso Técnico em andamento ou concluído",
+  "idadeMinima": "14 anos"
  }
 };

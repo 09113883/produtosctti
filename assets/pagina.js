@@ -71,6 +71,19 @@ function renderProduto(d){
 }
 
 /* ---------- CURSO ---------- */
+const MESES=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+function turmas(d){
+  if(!lista(d.turmas).length)return '';
+  const itens=lista(d.turmas).map(t=>{
+    const [dia,mes]=String(t.inicio).split('/');
+    const cls={'Inscrições abertas':'abertas','Vagas limitadas':'limitadas','Em andamento':'andamento'}[t.situacao]||'';
+    const quando=t.termino?`${esc(t.inicio)} a ${esc(t.termino)}`:esc(t.inicio);
+    return `<li><div class="data"><b>${esc(dia)}</b><span>${MESES[(+mes||1)-1]}</span></div>
+      <div><h3>${esc(t.nome)}</h3><p>${quando}</p><p>${esc(t.horarios||d.horarios||'')}${t.formato?' · '+esc(t.formato):''}</p></div>
+      <div class="acao"><span class="st ${cls}">${esc(t.situacao)}</span>${t.situacao==='Em andamento'?'':'<a href="#contato">Quero esta turma →</a>'}</div></li>`;
+  }).join('');
+  return `<ul class="turmas">${itens}</ul><p class="nota">As datas são previstas e podem ser ajustadas conforme a formação das turmas.</p>`;
+}
 function renderCurso(d){
   if(!d)return naoEncontrado('Voltar aos cursos','index.html#cursos');
   definirTitulo(d.nome,d.resumo);
@@ -85,7 +98,8 @@ function renderCurso(d){
     secao('Conteúdo programático',modulos),
     secao('Para quem é',paragrafos(d.publico)),
     secao('Oportunidades de atuação',cards(d.oportunidades)),
-    secao('Certificado',paragrafos(d.certificado))
+    secao('Certificado',paragrafos(d.certificado)),
+    secao('Próximas turmas',turmas(d))
   ].join('');
   document.getElementById('app').innerHTML=`
   <section class="hero"><div class="container">
@@ -96,7 +110,7 @@ function renderCurso(d){
   </div></section>
   <main><div class="container"><div class="layout"><div class="content">${corpo}</div>
    <aside class="summary">${inv?`<div class="price"><small>Investimento</small><strong>${esc(inv.valor)}</strong>${inv.condicao?`<div style="font-size:.88rem;color:#cfe0f0">${esc(inv.condicao)}</div>`:''}</div>`:''}
-    <div class="aside-body">${fato('Carga horária',d.cargaHoraria)}${fato('Formato',d.formatoDetalhe||d.formato)}${fato('Período',d.periodo)}${fato('Dias e horários',d.horarios)}${fato('Área tecnológica',d.area)}${fato('Situação da turma',d.situacao)}
+    <div class="aside-body">${fato('Carga horária',d.cargaHoraria)}${fato('Formato',d.formatoDetalhe||d.formato)}${fato('Dias e horários',d.horarios)}${fato('Área tecnológica',d.area)}${fato('Infraestrutura mínima',d.infraestrutura)}${fato('Pré-requisitos',d.preRequisitos)}${fato('Idade mínima',d.idadeMinima)}${fato('Situação da turma',d.situacao)}
     <a class="btn" href="#contato">${esc(d.contato?.botao||'Quero me inscrever')}</a></div></aside>
   </div></div>${formularioContato(d.contato,'Inscrição - '+d.nome,d.nome)}</main>`;
   ativarFormularios();
