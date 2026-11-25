@@ -3,14 +3,17 @@
    A chave é o nome do produto no catálogo, em minúsculas, sem acentos e com hífen no lugar dos espaços
    (ex.: 'Treinamento in company' -> 'treinamento-in-company'); assim o botão do index.html já abre esta página.
 
-   Campos: nome, segmento, faixa (opcional), resumo (opcional),
-           secoes: [{ titulo, texto: 'parágrafo' ou ['p1','p2'], lista: ['item'], cards: [{titulo, texto, id (chave de outro produto: vira link)}] }],
+   Campos: nome, segmento, faixa (opcional), chamada (frase curta usada nos cards do slider de Complementos), resumo (opcional),
+           complementosTexto (opcional: frase acima do slider de Complementos),
+           secoes: [{ titulo, texto: 'parágrafo' ou ['p1','p2'], lista: ['item'], cards: [{titulo, texto, id}] }],
+           A seção "Complementos" é automática: mostra, em slider, todos os outros produtos do mesmo segmento.
            contato (opcional): { titulo, texto, assunto, placeholder, botao } */
 const PRODUTOS={
  "treinamento-in-company": {
   "nome": "Treinamento in company",
   "segmento": "SENAI Negócios",
   "faixa": "Soluções corporativas",
+  "chamada": "Capacitação desenvolvida nas instalações da empresa, considerando seu contexto operacional, seus objetivos e as competências que precisam ser fortalecidas.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -31,27 +34,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Empresas que desejam capacitar equipes no próprio ambiente de trabalho, de áreas operacionais e técnicas até lideranças."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Diagnóstico de maturidade tecnológica",
-      "texto": "Análise estruturada do cenário tecnológico da organização para compreender seu estágio atual e identificar oportunidades de evolução.",
-      "id": "diagnostico-de-maturidade-tecnologica"
-     },
-     {
-      "titulo": "Consultoria",
-      "texto": "Atuação especializada para compreender desafios, avaliar cenários e apoiar a construção de caminhos de melhoria, inovação e desenvolvimento tecnológico.",
-      "id": "consultoria"
-     },
-     {
-      "titulo": "Preparatórios para Certificações",
-      "texto": "Preparação direcionada ao desenvolvimento dos conhecimentos e competências relacionados a certificações profissionais e tecnológicas.",
-      "id": "preparatorios-para-certificacoes"
-     }
-    ]
    }
   ]
  },
@@ -59,6 +41,7 @@ const PRODUTOS={
   "nome": "Treinamento local",
   "segmento": "SENAI Negócios",
   "faixa": "Soluções corporativas",
+  "chamada": "Capacitação realizada em unidade ou espaço definido pelo SENAI, com ambiente e recursos adequados à proposta formativa.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -79,27 +62,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Empresas, equipes e profissionais que buscam desenvolvimento técnico."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Treinamento in company",
-      "texto": "Capacitação desenvolvida nas instalações da empresa, considerando seu contexto operacional, seus objetivos e as competências que precisam ser fortalecidas.",
-      "id": "treinamento-in-company"
-     },
-     {
-      "titulo": "Preparatórios para Certificações",
-      "texto": "Preparação direcionada ao desenvolvimento dos conhecimentos e competências relacionados a certificações profissionais e tecnológicas.",
-      "id": "preparatorios-para-certificacoes"
-     },
-     {
-      "titulo": "Consultoria",
-      "texto": "Atuação especializada para compreender desafios, avaliar cenários e apoiar a construção de caminhos de melhoria, inovação e desenvolvimento tecnológico.",
-      "id": "consultoria"
-     }
-    ]
    }
   ]
  },
@@ -107,6 +69,7 @@ const PRODUTOS={
   "nome": "Cursos para empresas (Vídeo, Apostila e Podcast)",
   "segmento": "SENAI Negócios",
   "faixa": "Soluções corporativas",
+  "chamada": "Conteúdos de aprendizagem organizados em diferentes formatos — vídeo, apostila e podcast — para apoiar ações de capacitação e disseminação do conhecimento.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -127,27 +90,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Empresas que buscam alternativas flexíveis para capacitar e atualizar seus profissionais."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Treinamento in company",
-      "texto": "Capacitação desenvolvida nas instalações da empresa, considerando seu contexto operacional, seus objetivos e as competências que precisam ser fortalecidas.",
-      "id": "treinamento-in-company"
-     },
-     {
-      "titulo": "Palestras de profissionais para a Indústria",
-      "texto": "Encontros com profissionais e especialistas para compartilhar experiências, conhecimentos aplicados, tendências e temas relevantes para a indústria.",
-      "id": "palestras-de-profissionais-para-a-industria"
-     },
-     {
-      "titulo": "Consultoria",
-      "texto": "Atuação especializada para compreender desafios, avaliar cenários e apoiar a construção de caminhos de melhoria, inovação e desenvolvimento tecnológico.",
-      "id": "consultoria"
-     }
-    ]
    }
   ]
  },
@@ -155,6 +97,7 @@ const PRODUTOS={
   "nome": "Preparatórios para Certificações",
   "segmento": "SENAI Negócios",
   "faixa": "Soluções corporativas",
+  "chamada": "Preparação direcionada ao desenvolvimento dos conhecimentos e competências relacionados a certificações profissionais e tecnológicas.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -175,27 +118,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Profissionais e equipes que desejam se preparar para processos de certificação."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Treinamento local",
-      "texto": "Capacitação realizada em unidade ou espaço definido pelo SENAI, com ambiente e recursos adequados à proposta formativa.",
-      "id": "treinamento-local"
-     },
-     {
-      "titulo": "Treinamento in company",
-      "texto": "Capacitação desenvolvida nas instalações da empresa, considerando seu contexto operacional, seus objetivos e as competências que precisam ser fortalecidas.",
-      "id": "treinamento-in-company"
-     },
-     {
-      "titulo": "Especializações",
-      "texto": "Percursos formativos voltados ao aprofundamento de conhecimentos em áreas específicas, acompanhando transformações tecnológicas e demandas do mundo do trabalho.",
-      "id": "especializacoes"
-     }
-    ]
    }
   ]
  },
@@ -203,6 +125,7 @@ const PRODUTOS={
   "nome": "Palestras de profissionais para a Indústria",
   "segmento": "SENAI Negócios",
   "faixa": "Soluções corporativas",
+  "chamada": "Encontros com profissionais e especialistas para compartilhar experiências, conhecimentos aplicados, tendências e temas relevantes para a indústria.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -223,27 +146,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Empresas, lideranças, equipes técnicas e profissionais da indústria."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Treinamento in company",
-      "texto": "Capacitação desenvolvida nas instalações da empresa, considerando seu contexto operacional, seus objetivos e as competências que precisam ser fortalecidas.",
-      "id": "treinamento-in-company"
-     },
-     {
-      "titulo": "Diagnóstico de maturidade tecnológica",
-      "texto": "Análise estruturada do cenário tecnológico da organização para compreender seu estágio atual e identificar oportunidades de evolução.",
-      "id": "diagnostico-de-maturidade-tecnologica"
-     },
-     {
-      "titulo": "Consultoria",
-      "texto": "Atuação especializada para compreender desafios, avaliar cenários e apoiar a construção de caminhos de melhoria, inovação e desenvolvimento tecnológico.",
-      "id": "consultoria"
-     }
-    ]
    }
   ]
  },
@@ -251,6 +153,7 @@ const PRODUTOS={
   "nome": "Diagnóstico de maturidade tecnológica",
   "segmento": "SENAI Negócios",
   "faixa": "Soluções corporativas",
+  "chamada": "Análise estruturada do cenário tecnológico da organização para compreender seu estágio atual e identificar oportunidades de evolução.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -271,27 +174,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Empresas que desejam compreender sua maturidade tecnológica e orientar prioridades de desenvolvimento."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Consultoria",
-      "texto": "Atuação especializada para compreender desafios, avaliar cenários e apoiar a construção de caminhos de melhoria, inovação e desenvolvimento tecnológico.",
-      "id": "consultoria"
-     },
-     {
-      "titulo": "Treinamento in company",
-      "texto": "Capacitação desenvolvida nas instalações da empresa, considerando seu contexto operacional, seus objetivos e as competências que precisam ser fortalecidas.",
-      "id": "treinamento-in-company"
-     },
-     {
-      "titulo": "Palestras de profissionais para a Indústria",
-      "texto": "Encontros com profissionais e especialistas para compartilhar experiências, conhecimentos aplicados, tendências e temas relevantes para a indústria.",
-      "id": "palestras-de-profissionais-para-a-industria"
-     }
-    ]
    }
   ]
  },
@@ -299,6 +181,7 @@ const PRODUTOS={
   "nome": "Consultoria",
   "segmento": "SENAI Negócios",
   "faixa": "Soluções corporativas",
+  "chamada": "Atuação especializada para compreender desafios, avaliar cenários e apoiar a construção de caminhos de melhoria, inovação e desenvolvimento tecnológico.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -321,27 +204,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Para organizações que buscam apoio especializado para enfrentar desafios e desenvolver soluções, da indústria a empresas de serviços e tecnologia, com ou sem uma demanda totalmente definida. Se a necessidade ainda está clara apenas em parte, ajudamos a delimitá-la."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "A consultoria pode ser combinada com outras soluções do SENAI Negócios para ampliar os resultados do projeto.",
-    "cards": [
-     {
-      "titulo": "Diagnóstico de maturidade tecnológica",
-      "texto": "Análise estruturada do cenário tecnológico para identificar o estágio atual da empresa e orientar prioridades.",
-      "id": "diagnostico-de-maturidade-tecnologica"
-     },
-     {
-      "titulo": "Treinamento in company",
-      "texto": "Capacitação das equipes no próprio ambiente de trabalho, apoiando a adoção das soluções propostas.",
-      "id": "treinamento-in-company"
-     },
-     {
-      "titulo": "Palestras para a indústria",
-      "texto": "Encontros com especialistas para compartilhar tendências e experiências aplicadas ao setor produtivo.",
-      "id": "palestras-de-profissionais-para-a-industria"
-     }
-    ]
    }
   ],
   "contato": {
@@ -350,12 +212,14 @@ const PRODUTOS={
    "assunto": "Contato - Consultoria SENAI",
    "placeholder": "Descreva o desafio ou a necessidade da sua empresa",
    "botao": "Solicitar contato"
-  }
+  },
+  "complementosTexto": "A consultoria pode ser combinada com outras soluções do SENAI Negócios para ampliar os resultados do projeto."
  },
  "pos-tecnico": {
   "nome": "Pós-Técnico",
   "segmento": "SENAI Evolui",
   "faixa": "Formação continuada",
+  "chamada": "Formação de continuidade que amplia e aprofunda conhecimentos construídos na educação profissional técnica, favorecendo novos caminhos de atuação.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -376,27 +240,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Técnicos que desejam aprofundar conhecimentos e ampliar possibilidades profissionais."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Especializações",
-      "texto": "Percursos formativos voltados ao aprofundamento de conhecimentos em áreas específicas, acompanhando transformações tecnológicas e demandas do mundo do trabalho.",
-      "id": "especializacoes"
-     },
-     {
-      "titulo": "Graduação",
-      "texto": "Formação de nível superior que integra fundamentos, conhecimentos tecnológicos e competências para atuação em contextos profissionais.",
-      "id": "graduacao"
-     },
-     {
-      "titulo": "Aperfeiçoamentos",
-      "texto": "Oportunidades de atualização e desenvolvimento de competências específicas, complementando a formação e fortalecendo a preparação para desafios técnicos e profissionais.",
-      "id": "aperfeicoamentos"
-     }
-    ]
    }
   ]
  },
@@ -404,6 +247,7 @@ const PRODUTOS={
   "nome": "Especializações",
   "segmento": "SENAI Evolui",
   "faixa": "Formação continuada",
+  "chamada": "Percursos formativos voltados ao aprofundamento de conhecimentos em áreas específicas, acompanhando transformações tecnológicas e demandas do mundo do trabalho.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -424,27 +268,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Profissionais que buscam atualização, aprofundamento e diferenciação profissional."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Pós-Técnico",
-      "texto": "Formação de continuidade que amplia e aprofunda conhecimentos construídos na educação profissional técnica, favorecendo novos caminhos de atuação.",
-      "id": "pos-tecnico"
-     },
-     {
-      "titulo": "Graduação",
-      "texto": "Formação de nível superior que integra fundamentos, conhecimentos tecnológicos e competências para atuação em contextos profissionais.",
-      "id": "graduacao"
-     },
-     {
-      "titulo": "Preparatórios para Certificações",
-      "texto": "Preparação direcionada ao desenvolvimento dos conhecimentos e competências relacionados a certificações profissionais e tecnológicas.",
-      "id": "preparatorios-para-certificacoes"
-     }
-    ]
    }
   ]
  },
@@ -452,6 +275,7 @@ const PRODUTOS={
   "nome": "Graduação",
   "segmento": "SENAI Evolui",
   "faixa": "Formação continuada",
+  "chamada": "Formação de nível superior que integra fundamentos, conhecimentos tecnológicos e competências para atuação em contextos profissionais.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -472,27 +296,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Pessoas que desejam iniciar ou dar continuidade à formação em nível superior."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Especializações",
-      "texto": "Percursos formativos voltados ao aprofundamento de conhecimentos em áreas específicas, acompanhando transformações tecnológicas e demandas do mundo do trabalho.",
-      "id": "especializacoes"
-     },
-     {
-      "titulo": "Pós-Técnico",
-      "texto": "Formação de continuidade que amplia e aprofunda conhecimentos construídos na educação profissional técnica, favorecendo novos caminhos de atuação.",
-      "id": "pos-tecnico"
-     },
-     {
-      "titulo": "Habilitação Técnica",
-      "texto": "Formação técnica estruturada para desenvolver competências profissionais e preparar o estudante para atuar em uma área tecnológica.",
-      "id": "habilitacao-tecnica"
-     }
-    ]
    }
   ]
  },
@@ -500,6 +303,7 @@ const PRODUTOS={
   "nome": "Habilitação Técnica",
   "segmento": "SENAI Evolui",
   "faixa": "Formação continuada",
+  "chamada": "Formação técnica estruturada para desenvolver competências profissionais e preparar o estudante para atuar em uma área tecnológica.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -520,27 +324,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Pessoas interessadas em obter formação técnica para ingressar ou se desenvolver no setor industrial."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Pós-Técnico",
-      "texto": "Formação de continuidade que amplia e aprofunda conhecimentos construídos na educação profissional técnica, favorecendo novos caminhos de atuação.",
-      "id": "pos-tecnico"
-     },
-     {
-      "titulo": "Graduação",
-      "texto": "Formação de nível superior que integra fundamentos, conhecimentos tecnológicos e competências para atuação em contextos profissionais.",
-      "id": "graduacao"
-     },
-     {
-      "titulo": "Aperfeiçoamentos",
-      "texto": "Oportunidades de atualização e desenvolvimento de competências específicas, complementando a formação e fortalecendo a preparação para desafios técnicos e profissionais.",
-      "id": "aperfeicoamentos"
-     }
-    ]
    }
   ]
  },
@@ -548,6 +331,7 @@ const PRODUTOS={
   "nome": "Aperfeiçoamentos",
   "segmento": "SENAI Impulso",
   "faixa": "Aperfeiçoamento",
+  "chamada": "Oportunidades de atualização e desenvolvimento de competências específicas, complementando a formação e fortalecendo a preparação para desafios técnicos e profissionais.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -568,27 +352,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Alunos em formação e pessoas que desejam ampliar ou atualizar competências."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Habilitação Técnica",
-      "texto": "Formação técnica estruturada para desenvolver competências profissionais e preparar o estudante para atuar em uma área tecnológica.",
-      "id": "habilitacao-tecnica"
-     },
-     {
-      "titulo": "Pós-Técnico",
-      "texto": "Formação de continuidade que amplia e aprofunda conhecimentos construídos na educação profissional técnica, favorecendo novos caminhos de atuação.",
-      "id": "pos-tecnico"
-     },
-     {
-      "titulo": "Especializações",
-      "texto": "Percursos formativos voltados ao aprofundamento de conhecimentos em áreas específicas, acompanhando transformações tecnológicas e demandas do mundo do trabalho.",
-      "id": "especializacoes"
-     }
-    ]
    }
   ]
  },
@@ -596,6 +359,7 @@ const PRODUTOS={
   "nome": "Gamificação",
   "segmento": "SENAI Descoberta",
   "faixa": "Infância e criatividade",
+  "chamada": "Experiências educativas que utilizam desafios, regras, metas e dinâmicas inspiradas em jogos para tornar a aprendizagem mais envolvente e participativa.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -616,22 +380,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Crianças e público infantojuvenil."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Introdução ao pensamento computacional",
-      "texto": "Atividades que estimulam o raciocínio lógico, a organização de ideias, a identificação de padrões e a decomposição de problemas para criar soluções.",
-      "id": "introducao-ao-pensamento-computacional"
-     },
-     {
-      "titulo": "Robótica Educacional",
-      "texto": "Vivências de aprendizagem que aproximam crianças da tecnologia por meio da construção, experimentação e programação de soluções robóticas.",
-      "id": "robotica-educacional"
-     }
-    ]
    }
   ]
  },
@@ -639,6 +387,7 @@ const PRODUTOS={
   "nome": "Introdução ao pensamento computacional",
   "segmento": "SENAI Descoberta",
   "faixa": "Infância e criatividade",
+  "chamada": "Atividades que estimulam o raciocínio lógico, a organização de ideias, a identificação de padrões e a decomposição de problemas para criar soluções.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -659,22 +408,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Crianças e público infantojuvenil em fase de descoberta tecnológica."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Gamificação",
-      "texto": "Experiências educativas que utilizam desafios, regras, metas e dinâmicas inspiradas em jogos para tornar a aprendizagem mais envolvente e participativa.",
-      "id": "gamificacao"
-     },
-     {
-      "titulo": "Robótica Educacional",
-      "texto": "Vivências de aprendizagem que aproximam crianças da tecnologia por meio da construção, experimentação e programação de soluções robóticas.",
-      "id": "robotica-educacional"
-     }
-    ]
    }
   ]
  },
@@ -682,6 +415,7 @@ const PRODUTOS={
   "nome": "Robótica Educacional",
   "segmento": "SENAI Descoberta",
   "faixa": "Infância e criatividade",
+  "chamada": "Vivências de aprendizagem que aproximam crianças da tecnologia por meio da construção, experimentação e programação de soluções robóticas.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -702,22 +436,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Crianças e público infantojuvenil interessados em tecnologia e criação."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Introdução ao pensamento computacional",
-      "texto": "Atividades que estimulam o raciocínio lógico, a organização de ideias, a identificação de padrões e a decomposição de problemas para criar soluções.",
-      "id": "introducao-ao-pensamento-computacional"
-     },
-     {
-      "titulo": "Gamificação",
-      "texto": "Experiências educativas que utilizam desafios, regras, metas e dinâmicas inspiradas em jogos para tornar a aprendizagem mais envolvente e participativa.",
-      "id": "gamificacao"
-     }
-    ]
    }
   ]
  },
@@ -725,6 +443,7 @@ const PRODUTOS={
   "nome": "Formação profissional com prática",
   "segmento": "SENAI Jovem",
   "faixa": "Formação profissional",
+  "chamada": "Formação que combina conhecimentos técnicos e atividades práticas, aproximando o processo de aprendizagem de situações e desafios do contexto profissional.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -745,27 +464,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Jovens que buscam preparação profissional com vivências práticas."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Formação profissional sem prática",
-      "texto": "Formação com foco em conhecimentos, conceitos e fundamentos profissionais, organizada sem atividades práticas previstas na oferta.",
-      "id": "formacao-profissional-sem-pratica"
-     },
-     {
-      "titulo": "Habilitação Técnica",
-      "texto": "Formação técnica estruturada para desenvolver competências profissionais e preparar o estudante para atuar em uma área tecnológica.",
-      "id": "habilitacao-tecnica"
-     },
-     {
-      "titulo": "SAGA SENAI",
-      "texto": "Experiência de inovação e desenvolvimento de soluções, conectando desafios, criatividade e aplicação de conhecimentos em contextos ligados à indústria.",
-      "id": "saga-senai"
-     }
-    ]
    }
   ]
  },
@@ -773,6 +471,7 @@ const PRODUTOS={
   "nome": "Formação profissional sem prática",
   "segmento": "SENAI Jovem",
   "faixa": "Formação profissional",
+  "chamada": "Formação com foco em conhecimentos, conceitos e fundamentos profissionais, organizada sem atividades práticas previstas na oferta.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -793,22 +492,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Jovens que desejam desenvolver conhecimentos e se preparar para o mundo do trabalho."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "Formação profissional com prática",
-      "texto": "Formação que combina conhecimentos técnicos e atividades práticas, aproximando o processo de aprendizagem de situações e desafios do contexto profissional.",
-      "id": "formacao-profissional-com-pratica"
-     },
-     {
-      "titulo": "Habilitação Técnica",
-      "texto": "Formação técnica estruturada para desenvolver competências profissionais e preparar o estudante para atuar em uma área tecnológica.",
-      "id": "habilitacao-tecnica"
-     }
-    ]
    }
   ]
  },
@@ -816,6 +499,7 @@ const PRODUTOS={
   "nome": "SAGA SENAI",
   "segmento": "SENAI Inova",
   "faixa": "Inovação e excelência",
+  "chamada": "Experiência de inovação e desenvolvimento de soluções, conectando desafios, criatividade e aplicação de conhecimentos em contextos ligados à indústria.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -836,22 +520,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Estudantes e equipes interessadas em inovação, tecnologia e resolução de desafios."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "WorldSkills",
-      "texto": "Iniciativa de valorização da excelência em competências profissionais, com foco no desenvolvimento técnico e na demonstração de habilidades em padrões de referência.",
-      "id": "worldskills"
-     },
-     {
-      "titulo": "Formação profissional com prática",
-      "texto": "Formação que combina conhecimentos técnicos e atividades práticas, aproximando o processo de aprendizagem de situações e desafios do contexto profissional.",
-      "id": "formacao-profissional-com-pratica"
-     }
-    ]
    }
   ]
  },
@@ -859,6 +527,7 @@ const PRODUTOS={
   "nome": "WorldSkills",
   "segmento": "SENAI Inova",
   "faixa": "Inovação e excelência",
+  "chamada": "Iniciativa de valorização da excelência em competências profissionais, com foco no desenvolvimento técnico e na demonstração de habilidades em padrões de referência.",
   "secoes": [
    {
     "titulo": "Sobre a solução",
@@ -879,22 +548,6 @@ const PRODUTOS={
    {
     "titulo": "Para quem é indicada",
     "texto": "Estudantes, competidores e profissionais envolvidos no desenvolvimento de competências técnicas."
-   },
-   {
-    "titulo": "Complementos",
-    "texto": "Esta solução pode ser combinada com outras ofertas do SENAI para ampliar os resultados.",
-    "cards": [
-     {
-      "titulo": "SAGA SENAI",
-      "texto": "Experiência de inovação e desenvolvimento de soluções, conectando desafios, criatividade e aplicação de conhecimentos em contextos ligados à indústria.",
-      "id": "saga-senai"
-     },
-     {
-      "titulo": "Habilitação Técnica",
-      "texto": "Formação técnica estruturada para desenvolver competências profissionais e preparar o estudante para atuar em uma área tecnológica.",
-      "id": "habilitacao-tecnica"
-     }
-    ]
    }
   ]
  }

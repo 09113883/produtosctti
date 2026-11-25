@@ -8,6 +8,7 @@
            cargaHoraria, horarios, infraestrutura, preRequisitos, idadeMinima,
            turmas [{nome, inicio 'dd/mm/aaaa', termino, horarios, formato, situacao ('Inscrições abertas'|'Vagas limitadas'|'Em breve'|'Em andamento')}], investimento {valor, condicao}, sobre, desafio, conquistas [], metodologia,
            conteudo [{nome, descricao, horas}], publico, oportunidades [{titulo, texto}], certificado,
+           perfil {interesses, objetivos, niveis} (usado pelo questionário descubra-seu-curso.html; ids em assets/orientacao.js),
            contato {titulo, texto, assunto, placeholder, botao} */
 const CURSOS={
  "analise-de-dados-big-data-e-business-intelligence": {
@@ -113,7 +114,22 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "dados",
+    "ia"
+   ],
+   "objetivos": [
+    "entrar",
+    "mudar",
+    "crescer"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario"
+   ]
+  }
  },
  "automacao-inteligente-de-processos-com-ia": {
   "nome": "Automação Inteligente de Processos com IA",
@@ -218,7 +234,21 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "ia",
+    "dados"
+   ],
+   "objetivos": [
+    "crescer",
+    "mudar"
+   ],
+   "niveis": [
+    "intermediario",
+    "avancado"
+   ]
+  }
  },
  "banco-de-dados-sql": {
   "nome": "Banco de Dados SQL",
@@ -318,7 +348,22 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "dados",
+    "dev"
+   ],
+   "objetivos": [
+    "entrar",
+    "mudar",
+    "crescer"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario"
+   ]
+  }
  },
  "desenvolvimento-de-chatbots-e-assistentes-com-ia": {
   "nome": "Desenvolvimento de Chatbots e Assistentes com IA",
@@ -415,7 +460,21 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "ia",
+    "dev"
+   ],
+   "objetivos": [
+    "mudar",
+    "crescer"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario"
+   ]
+  }
  },
  "empreendedorismo-inovacao-e-novos-negocios": {
   "nome": "Empreendedorismo, Inovação e Novos Negócios",
@@ -515,7 +574,22 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "negocios"
+   ],
+   "objetivos": [
+    "empreender",
+    "crescer",
+    "entrar"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario",
+    "avancado"
+   ]
+  }
  },
  "full-stack-web": {
   "nome": "Full Stack Web",
@@ -632,7 +706,20 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "dev"
+   ],
+   "objetivos": [
+    "entrar",
+    "mudar"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario"
+   ]
+  }
  },
  "ia-aplicada-a-industria": {
   "nome": "IA Aplicada à Indústria",
@@ -724,7 +811,21 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "industria",
+    "ia"
+   ],
+   "objetivos": [
+    "crescer",
+    "mudar"
+   ],
+   "niveis": [
+    "intermediario",
+    "avancado"
+   ]
+  }
  },
  "qualificacao-em-animacao-3d": {
   "nome": "Qualificação em Animação 3D",
@@ -829,7 +930,20 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "criativo"
+   ],
+   "objetivos": [
+    "entrar",
+    "mudar"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario"
+   ]
+  }
  },
  "qualificacao-profissional-em-python-para-ciberseguranca-e-redes": {
   "nome": "Qualificação profissional em Python para Cibersegurança e Redes",
@@ -926,7 +1040,22 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "redes",
+    "dev"
+   ],
+   "objetivos": [
+    "crescer",
+    "mudar",
+    "entrar"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario"
+   ]
+  }
  },
  "qualificacao-profissional-em-software-livre-para-redes-e-ciberseguranca": {
   "nome": "Qualificação profissional em software Livre para redes e Cibersegurança",
@@ -1031,6 +1160,19 @@ const CURSOS={
   ],
   "infraestrutura": "Computador com acesso à internet",
   "preRequisitos": "Curso Técnico em andamento ou concluído",
-  "idadeMinima": "14 anos"
+  "idadeMinima": "14 anos",
+  "perfil": {
+   "interesses": [
+    "redes"
+   ],
+   "objetivos": [
+    "entrar",
+    "crescer"
+   ],
+   "niveis": [
+    "iniciante",
+    "intermediario"
+   ]
+  }
  }
 };
